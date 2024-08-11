@@ -10,15 +10,16 @@ function Userinput() {
     // Asks the user to play Paper, Scissors, Rock and then asks then to insert something to start the game. 
 
 
-    let numofAttempts = ''
+    let numofAttempts = 0
     let userScore = ''
     let computerScore = ''
-    let roundNumber = 1
+    alert("Lets play paper, sciccors or rock!")
 
     while (numofAttempts < 3) {
-        let userChoice = prompt("Let's play Paper, Scissors, Rock! Insert what you want to say")
-        let index = Math.floor(Math.random() * randomAnswer)
         numofAttempts = numofAttempts + 1
+        alert('Round' + numofAttempts)
+        let userChoice = prompt('Insert paper, sciccors or rock')
+        let index = Math.floor(Math.random() * randomAnswer)
         let computerAnswer = answers[index]
         // Outputs a reply back to the user with a random word in the array. 
         alert(computerAnswer + '!')
@@ -36,6 +37,7 @@ function Userinput() {
             alert('You lose womp womp.')
             // If the user has lost this code will out put 'You lose' 
             computerScore = computerScore + 1
+
         }
         else if (
             userChoice == 'paper' && computerAnswer == 'Rock' ||
@@ -44,22 +46,33 @@ function Userinput() {
             alert('YAY, you win.')
             //If the user has won this code will put 'you win'
             userScore = userScore + 1
+
         }
 
-       
+        else if (
+            userChoice == 'paper' && computerAnswer == 'Paper' ||
+            userChoice == 'scissors' && computerAnswer == 'Sciccors' ||
+            userChoice == 'rock' && computerAnswer == 'Rock') {
+            alert("It's a tie.")
+            //If the user has won this code will put 'you win'
 
-        roundNumber = roundNumber + 1
+        }
+        else {
+            alert('Invaild response, game over.')
+        }
+
+
 
     }
-if(userChoice > computerAnswer){
-    alert('congrats you have won the game')
-}
-else if (userChoice < computerAnswer) {
-    alert('HAHA you lose')
-}
-
-
-
+    if (userScore > computerScore) {
+        alert('congrats you have won the game')
+    }
+    else if (userScore < computerScore) {
+        alert('HAHA you lose')
+    }
+    else {
+        alert('Invaild response, game over.')
+    }
 
 
 } 
