@@ -14,16 +14,18 @@ function Userinput() {
     let userScore = ''
     let computerScore = ''
     alert("Lets play paper, sciccors or rock!")
+    let userName = prompt('What is your name?')
 
     while (numofAttempts < 3) {
         numofAttempts = numofAttempts + 1
         alert('Round' + numofAttempts)
         let userChoice = prompt('Insert paper, sciccors or rock')
+        userChoice = userChoice.toLowerCase()
+        userChoice = userChoice.trim()
         let index = Math.floor(Math.random() * randomAnswer)
         let computerAnswer = answers[index]
         // Outputs a reply back to the user with a random word in the array. 
         alert(computerAnswer + '!')
-
 
 
         if (userChoice == computerAnswer) {
@@ -37,6 +39,7 @@ function Userinput() {
             alert('You lose womp womp.')
             // If the user has lost this code will out put 'You lose' 
             computerScore = computerScore + 1
+            results.push('computer wins')
 
         }
         else if (
@@ -46,6 +49,7 @@ function Userinput() {
             alert('YAY, you win.')
             //If the user has won this code will put 'you win'
             userScore = userScore + 1
+            results.push('Winner: ' + userName)
 
         }
 
@@ -55,14 +59,13 @@ function Userinput() {
             userChoice == 'rock' && computerAnswer == 'Rock') {
             alert("It's a tie.")
             //If the user has won this code will put 'you win'
+            results.push('tied')
 
         }
         else {
             alert('Invaild response, game over.')
         }
-
-
-
+     
     }
     if (userScore > computerScore) {
         alert('congrats you have won the game')
@@ -73,6 +76,17 @@ function Userinput() {
     else {
         alert('Invaild response, game over.')
     }
+}
 
 
-} 
+
+
+let results = [
+]
+
+function showScoreboard() {
+    alert(results)
+}
+
+
+
