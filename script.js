@@ -27,7 +27,7 @@ function Userinput() {
         // Asks the user to input 'paper, sciccors or rock' to countinue the game. 
         userChoice = userChoice.toLowerCase()
         userChoice = userChoice.trim()
-        //These to codes is put in here in order to still work even after the user puts in for example 'rOck' and if the user has put in a space before entering the chosen word. 
+        //These to codes is put in here in order to still work even after the user puts in for example 'rock' and if the user has put in a space before entering the chosen word. 
         let index = Math.floor(Math.random() * randomAnswer)
         let computerAnswer = answers[index]
         // Outputs a reply back to the user with a random word in the array. 
@@ -43,7 +43,7 @@ function Userinput() {
             userChoice == 'paper' && computerAnswer == 'Scissors' ||
             userChoice == 'scissors' && computerAnswer == 'Rock') {
             alert('You lose womp womp.')
-            //this code takes every possibility that there is for the computer to win and it will do an alert saying 'you lost'
+            //this code takes every possibility that there is for the computer to win and it will do an alert saying 'you lost' 
             computerScore = computerScore + 1
             //This code will add a point to the scoreboard everytime the computer has won.
             results.push('computer wins')
