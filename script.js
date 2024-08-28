@@ -26,7 +26,7 @@ function Userinput() {
         let userChoice = prompt('Insert paper, sciccors or rock')
         // Asks the user to input 'paper, sciccors or rock' to countinue the game. 
         userChoice = userChoice.toLowerCase()
-        userChoice = userChoice.trim()
+        userChoice = userChoice.trim() 
         //These to codes is put in here in order to still work even after the user puts in for example 'rock' and if the user has put in a space before entering the chosen word. 
         let index = Math.floor(Math.random() * randomAnswer)
         let computerAnswer = answers[index]
